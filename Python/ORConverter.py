@@ -11,9 +11,7 @@ E2 = (A2 - B2) / A2
 EP2 = (A2 - B2) / B2
 
 def llh_to_ecef(latitude, longitude, height):
-    '''Convert (latitude, longitude, height) in LLH to (x, y, z) in ECEF.
-    '''
-
+    
     lat = latitude / 180 * math.pi
     lon = longitude / 180 * math.pi
 

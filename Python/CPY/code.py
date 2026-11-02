@@ -55,12 +55,13 @@ def PID(R,Feedback, CI, CD,oldTime):
     return out
 
 
+a = 1.1755
+b = 2.6051
+c = 0.4273
+d = 89.5457
 
 while 1:
-    a = 1.1755
-    b = 2.6051
-    c = 0.4273
-    d = 89.5457
+    
     R = d+(a-b)/(1+(time.monotonic()/c)^b) 
     
     PIDout = PID(R,Feedback,CI,CD,oldTime)*microsteps
@@ -88,7 +89,7 @@ while 1:
     pull.frequency = int(PIDout)
 
     try:
-        feedbackRead = encoder.position
+        feedbackRead = encoder.position/50
     except Exception as e:
         print(e)
 
