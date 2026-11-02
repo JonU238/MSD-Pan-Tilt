@@ -19,7 +19,7 @@ thetad = 0
 theta = 0
 tn = time.monotonic()
 
-period = (degperstep/msteps)
+period = thetad/(degperstep/msteps)
 
 for i in range(numStep):
 
